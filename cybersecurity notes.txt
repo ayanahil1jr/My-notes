@@ -1,0 +1,499 @@
+
+--Ayan Atif Gr.9
+
+Table of Contents
+----------------------
+1. Navigation in Linux
+2. Getting started with Networking
+3. Python Script
+4. Networking Commands
+5. Memory Types
+6. Binary and Logic gates
+7. layers of OS and hardware types in PC
+8. Internet and network
+9. GUI and CLI
+10. Ethics
+----------------------
+=============================================================================================================
+----------------------
+1) Navigation in Linux
+----------------------
+
+Commands:
+- ls (A)
+- cd (B)
+- dir (C)
+- mkdir (D)
+- rmdir (E)
+- touch (F)
+- rm (G)
+- nano (H)   
+- mv (I)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+-rename (j)
+-----------------------
+
+A) 'ls'
+	-Purpose: lists the contents of a directory
+	-Usage: 'ls' for basic listing, 'ls -i' for detailed listing, 'ls -a' to include hidden files
+	-Notes: A quick way to view what's in the current directory
+B) 'cd'
+	-Purpose: changes the current directory
+	-Usage: 'cd [directory path (case sensitive)] to go to a specific directory, 'cd ..' to move up one directory level, 'cd ../../..' to move up multiple directories at once
+	-Notes: most commonly used for for navigated through the file system
+C) 'pwd'
+	-Purpose: Prints the current directory path
+	-Usage: 'pwd' to display the full path of the current directory
+	-Notes: useful for confirming your current location in the filesystem.
+D) 'mkdir'
+	-Purpose: Creates a new directory
+	-Usage: 'mkdir [directory name]' to create a new directory in current location
+	-Notes: Handy for organizing files into new folders.
+E) 'rmdir'
+	-Purpose: removes a directory
+	-Usage: 'rmdir [directory name]' to delete an empty directory
+	-Notes: used for cleaning up and removing unused directories. note that the directory must be empty
+F) 'touch'
+	-Purpose: creates a new file in the current directory
+	-Usage 'touch [file name]' to create a new file type
+	-Notes: an easy way to create files in the directory
+G) 'rm'
+	-Purpose: removes a file in the current directory
+	-Usage: 'rm [file name]' to remove an existing file
+	-Notes: used to remove files in the current directory
+H) 'nano'
+	-Purpose: opens nano to edit files
+	-Usage: 'nano [file name]' to edit files with nano
+	-Notes: used to edit new or pre-existing files
+I) ‘mv’
+	-Purpose: moves a file from one directory to another
+	-Usage: mv path/to/file.txt path/to/new/folder
+	Notes: used to move a file to another folder available
+J)  ‘rename’
+	-purpose:  renames a file or a directory
+	-usage: rename path/to/file.txt newname.txt
+	-notes: used for renaming existing files or directories
+-----------------------
+=====================================================================================
+-----------------------
+2) Getting started with Networking
+-----------------------
+
+Things to know:
+1. IP address
+2. Subnet Masks
+3. Gateway
+4. DNS
+5. Network Switch
+6. Network Router
+7. What are "Access points'
+8. MAC address
+9. What are "Ports" in network addressing
+10. Types of networks (WAN, LAN, PAN, MAN, VPN)
+
+-----------------------
+
+1.	An IP address is a unique Identifier that identifies a device on the internet or a local network. It stands for Internet Protocol, and it is used for communication.
+
+2.	A subnet mask is a 32-bit number that divides an IP address into a host address and a network address. It helps to filter which devices can communicate with each other on a network.
+
+3.	A gateway is typically a device or a node that connects networks and allows them to communicate by translating protocols and data formats.
+
+4.	The DNS is used for translating internet address to numeric machine addresses that computers understand and use.
+
+5.	A network switch is a hardware component used to connect networks by using packet switching to receive and forward data. Packet switching is when a message is broken into parts and sent in those parts one by one.
+
+6.	A network router is a device that connects two or more packet switched networks. It helps to manage traffic between networks and allow different devices to use the same internet connection.
+
+7.	Access points are hubs that allow multiple devices to connect with each other.
+
+8.	Media access control addresses (MAC address) are used to identify which device is which on a network so the data being sent to one device doesn’t get sent to another.
+
+9.	A port address is used for identifying an application on a device that uses the internet for communication
+
+10.	A LAN is a network that is limited to a small area, including a building or a home.
+	A WAN is a network that is a much larger area and connects LANs and other networks together.
+	A PAN is a network for individual device within the rage of an individual person
+	A MAN is a network that is in between the radius of LAN and WAN, usually the size of cities. 
+	A VPN is used to create a secure and encrypted connection over a less secure network including the internet.
+Information gets sent over networks in Packets, made up of binary.
+-----------------------
+=============================================================================================================
+-----------------------
+3) Python Script
+-----------------------
+
+import tkinter as tk
+import cv2
+import random
+
+class PopupWindow(tk.Toplevel):
+    def __init__(self, master=None, image_path=""):
+        super().__init__(master)
+        self.title("PWNED")
+
+        screen_width = self.master.winfo_screenwidth()
+        screen_height = self.master.winfo_screenheight()
+        popup_width = random.randint(100, 300)
+        popup_height = random.randint(50, 150)
+        x_position = random.randint(0, screen_width - popup_width)
+        y_position = random.randint(0, screen_height - popup_height)
+
+        self.label = tk.Label(self, text="HAHAHAHAHAHAHAAH")
+        self.label.pack(padx=10, pady=10)
+
+        self.image_path = image_path
+        original_image = cv2.imread(self.image_path)
+
+        resized_image = self.resize_image(original_image, popup_width, popup_height)
+
+        resized_image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        self.photo = tk.PhotoImage(data=cv2.imencode('.ppm', resized_image_rgb)[1].tobytes())
+        image_label = tk.Label(self, image=self.photo)
+        image_label.pack(padx=10, pady=10)
+
+        self.protocol("WM_DELETE_WINDOW", self.on_close)
+        self.geometry(f"{popup_width}x{popup_height}+{x_position}+{y_position}")
+
+    def resize_image(self, image, target_width, target_height):
+        original_height, original_width, _ = image.shape
+        aspect_ratio = original_width / original_height
+
+        scale_factor_width = target_width / original_width
+        scale_factor_height = target_height / original_height
+
+        scale_factor = min(scale_factor_width, scale_factor_height)
+
+        resized_image = cv2.resize(image, (int(original_width * scale_factor), int(original_height * scale_factor)),
+                                   interpolation=cv2.INTER_AREA)
+        return resized_image
+
+    def on_close(self):
+        self.destroy()
+        create_popup_windows()
+
+def create_popup_windows():
+    num_windows = len(root.winfo_children()) * 2
+    for _ in range(num_windows):
+        popup = PopupWindow(root, image_path="/home/ayan/Downloads/images.ppm")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.geometry(f"{screen_width}x{screen_height}")
+\
+    initial_windows = 2
+    for _ in range(initial_windows):
+        popup = PopupWindow(root, image_path="/home/ayan/Downloads/images.ppm")
+
+    root.mainloop()
+
+-----------------------
+=============================================================================================================
+-----------------------
+4) Networking Commands
+-----------------------
+
+Commands:
+
+1) ifconfig: Displays or configures network interfaces on a system
+
+2) ip: A versatile tool for configuring interfaces, routing tables, and tunnels
+
+3) traceroute: Traces the route that packets take to each a network host
+
+4) tracepath: similar to 'traceroute', but uses a different method to discover the route
+
+5) netstat: Displays network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+
+6) ss: A replacement for netstat that provides more detailed information about socket connections.
+
+7) dig: A tool for querying DNS (Domain Name System) servers for information about domain names and IP addresses.
+
+8) nslookup: Another tool for querying DNS servers. It is used to look up domain names and find IP addresses.
+
+9) route: Displays or modifies the IP routing table.
+
+10) host: Performs DNS lookups and displays information about domain names or IP addresses.
+
+11) arp: Displays and modifies entries in the ARP (Address Resolution Protocol) cache.
+
+12) iwconfig: Configures wireless network interfaces.
+
+13) hostname: Displays or sets the hostname of the system.
+
+14) curl or wget: Command-line tools for transferring data with URLs. They can be used to download files from the internet.
+
+15) mtr: Combines the functionality of traceroute and ping to provide a continuous stream of information about network paths.
+
+16) whois: Retrieves information about the owner of a domain or IP address from the WHOIS database.
+
+17) ifplugstatus: Checks the link status of network interfaces, indicating whether a cable is plugged in.
+
+18) iftop: Displays a list of network connections and their data rates in real-time.
+
+19) tcpdump: Captures and analyzes network traffic.
+
+20) ping: checks if a computer is reachable over a network and measures how long it takes for data to travel to and from that computer.
+
+21) wall: sends a message to all logged-in users on same wired connection
+
+22) wrote: sends a message to a specific logged-in user
+-----------------------
+=============================================================================================================
+-----------------------
+
+IRC is a way people can join eachother on the internet and talk to eachother. One IRC is LAN. the LAN works for 
+people on the same internet.
+
+-----------------------
+=============================================================================================================
+5. Memory types
+
+1. CPU (central processing unit) executes sequences of stored instructions called programs
+2. Memory: Registers, Cache memory, RAM, ROM, secondary storage, virtual memory, Tertiary Storage
+Registers: Tiny storage areas within the CPU itself
+	Function: store data that the CPU needs imminently, ensuring ultra-fast access
+	size: limited, holds immediate data for current operations
+	speed: fastest memory type due to being inside the cpu
+Cache memory: a small-sized volatile computer memory that provides high-speed data access to the processor
+	Levels:
+		L1 Cache: Located directly on the processer (CPU). smallest but fastest
+		L2 Cache: Larger than L1, may be on the CPU or near it on the same chip
+		L3 Cache: Even larger, slightly slower, typically shared across all CPU cores
+		Function: stores data that has been accessed alot, enhancing the speed and performance of it.
+RAM (Random Access Memory) Volitile memory, serves as the computer's "working memory". basically stores information that is currently being used.
+Definition: Volatile memory, servers as the computer's "working memory."
+types: 
+	DRAM (Dynamic RAM): most common type but needs to be refreshed constantly
+	SRAM (Static RAM): Faster, but less common. doesnt need to be refreshed. often used for cache memory.
+Function: Stores data for active tasks, enabling quick read and write access.
+Speed: Slower than cache but faster than storage devices. crucial for smooth system operations
+
+ROM (Read-Only Memory)
+Definition: Non-volatile memory, cannot be easily altered or reprogrammed.
+Types:
+	Prom (programmable ROM): can only be programmed once
+	EPROM (Erasable PROM): Can be erased with UV light and reprogrammed.
+	EEPROM (electrically EPROM): can be electrically erased and reprogrammed
+Function: stores firmware or data that needs to remain intact even when system is shut off.
+
+Secondary Storage (Mass Storage)
+Definition: Non-volatile emory systems for long-term storage
+Types:
+	SSD (Solid State Drive): uses NAND-based flash memory (able to stay without power source). it has no moving parts and faster than HDDs
+	HDD (Hard Disk Drive): Uses magnetic storage with mechanical parts. it has a larger capacity for its price but is s;pw than SSDs
+	Optical Drives (CD, DVD, Blu-ray): uses lasers to read/write data
+	Flash Drives: Portable Storage, use flash memory similar to SSDs
+Function: Store large amounts of data permanently, including the operating systems, apps, and other files from the user
+Speed: generally slower than RAM, but newer versions of SSd's can be close in speeds for certain operations
+
+Virtual Memory
+Definition: A memory management capability that uses a combination of RAM and disk space to enable larger programs to run  within the avalible physical memory
+Function: when RAM gets full, data that isnt used muc is "paged out" to a designated space on the storage drive called the "swap space" or "page file" to make more RAM for the space-hungry operation
+Speed: Access speed is determined by the storage medium (SSDs will provide faster virtual memory access than HDDs)
+
+Tertiary Storage: Data storage solutions like tape drives
+Function: used for archiving or backing up vast amounts of data.
+Speed: much slower, is better suited for data that isn't often used
+
+Volatile:
+RAM, Cache
+
+Persistent:
+HDD, SSD, Optic CD DVD Blue-ray, Flash drives, Memory cards
+-----------------------
+====================================================================================
+-----------------------
+6. Binary  and Logic gates
+
+Binary:
+1 = true, 0 = false. Base 2
+
+|128|64|32|16|8|4|2|1
+  1  0  0  1  1 0 1 0 = byte
+=  128 + 16 + 8 + 2
+= 154
+
+
+
+
+Logic gates:
+   A/B = 1         A/B = 0          A&B = 1         any = 1    only A or only B = 1
+      Yes    	      No      	      And    	       Or      	      Xor
+  1 | 0 | 1 	  1 | 0 | 0 	  1 | 0 | 0 	   1 | 0 | 1 	  1 | 0 | 1
+  0 | 1 | 0       0 | 1 | 1  	  0 | 1 | 0	   0 | 1 | 1 	  0 | 1 | 1
+  0 | 0 | 0  	  0 | 0 | 1 	  0 | 0 | 0 	   0 | 0 | 0 	  0 | 0 | 0
+  1 | 1 | 1  	  1 | 1 | 0   	  1 | 1 | 1 	   1 | 1 | 1  	  1 | 1 | 0
+
+-----------------------
+====================================================================================
+-----------------------
+7. Layers of an OS and Hardware in a PC
+
+Layers of OS:
+OS: makes sure programs are running smoothly, controls the hardware and others. Manages everything.
+File Systems: Used for storing the user’s documents.
+Shell: takes commands (typing, clicking) and tells the operating system on what to translate
+Kernal: Computer’s coordinator. It keeps track and manages how applications or programs use the hardware.
+BIOS: Prepares everything when you provide power to computer, so it can start running.
+Firmware: software embedded in hardware devices to make them work correctly
+Hardware
+
+CPU: central component of a PC that executes instructions from a computer program performing operations. Brain of the computer
+HDD, SSD  (memory): A HDD uses magnets tis tire and retrieve digital information with the read/write heads. An SSD uses a NAND-based flash memory with no moving parts
+RAM: RAM is used to store data that is actively being processed. RAM is a volatile memory, meaning it gets emptied once power is cut off.
+Motherboard: main circuit board of a computer and it houses the RAM, CPU, and other essentials providing connections between them.
+Case: houses all the hardware in the PC
+Power supply: converts electrical power into a form that computers can use. 
+GPU: used for rendering graphics and parallel processing tasks. Essential for gaming and video editing
+Cooler: used for removing the heat generated by CPU or GPU.
+-----------------------
+====================================================================================
+-----------------------
+8. internet and network
+Internet: a series of devices connection to eachother
+Ip (internet protocol) : unique identifier for devices on a network
+Ipv4: 4 billion addresses
+Ipv6: 300 trillion addresses
+
+Bit – byte – kilobyte – megabyte – gigabyte- terabyte - petabyte
+
+TCP: need acknowledgement, response when sending info. Cannot get mixed up because response is given.
+UDP: no response. Sends information, hopes someone gets it. Can get mixed up.
+
+Network appliance: hardware used for performing specific functions within a computer network.
+Switch: connects device to a local network to send information only where it needs to go, reducing network traffic, traffic cop for computer network.
+Router: like switches but works for the internet. Instead of only sending info from device to device, it sends it between device and internet. Uses Ip addresses to find the best path of travel.
+Wireless router: same as router but lets devices connect without cables through Wi-Fi. All wireless routers are routers but not all routers are wireless routers.
+-----------------------
+====================================================================================
+-----------------------
+9. Gui and CLI
+Gui: graphical user interface: easier to use, visual.
+CLI: command line interface: commands. Can be used for more safety, grant permissions, faster, some systems have no GUI, headless.
+-----------------------
+====================================================================================
+-----------------------
+ 10. Ethics
+
+Blackhat: malicious, does not have consent.
+Whitehat: has permission, penetration testing.
+Red hat and blue hat: red hat is on offence and blue hat is on defense.
+-----------------------
+=====================================================================================
+-----------------------
+1. Navigating the File System
+Commands to Practice:
+
+pwd — Displays your current directory.
+ls — Lists files and directories.
+
+Options:
+
+ls -l (detailed view)
+ls -a (shows hidden files)
+cd — Changes the current directory.
+
+Examples:
+
+cd /path/to/directory (absolute path)
+cd Documents (relative path)
+cd .. (move up one directory)
+cd ~ (go to home directory)
+Tips:
+
+Use man [command] to read the manual for any command.
+Google searches like "How to use the ls command in Linux" can provide quick tutorials.
+Ask ChatGPT for explanations or examples if you're unsure how a command works.
+2. CRUD Operations on Files and Directories
+Create:
+
+touch filename.txt — Creates an empty file.
+mkdir myfolder — Creates a new directory.
+Read:
+
+cat filename.txt — Displays the contents of a file.
+less filename.txt — Allows you to scroll through a file.
+Update:
+
+nano filename.txt — Opens a file in the Nano text editor.
+echo "Text" &gt;&gt; filename.txt — Appends text to a file.
+Delete:
+
+rm filename.txt — Removes a file.
+rmdir myfolder — Removes an empty directory.
+rm -r myfolder — Removes a directory and its contents recursively.
+Tips:
+
+Be cautious with rm commands; deleted files can't be easily recovered.
+For more examples, search "Basic file operations in Linux" on Google or ask ChatGPT.
+3. File Permissions and chmod
+Understanding Permissions:
+
+Use ls -l to view file permissions.
+Permissions are shown as -rwxrwxrwx, divided into User (u), Group (g), and Others (o).
+
+r — Read (4)
+w — Write (2)
+x — Execute (1)
+Changing Permissions:
+
+Symbolic method:
+
+chmod u+x filename — Adds execute permission for the user.
+chmod g-w filename — Removes write permission from the group.
+Numeric method:
+
+chmod 755 filename — Sets permissions to rwxr-xr-x.
+Tips:
+
+Practice changing permissions and observe the effects.
+Online resources like "Understanding chmod in Linux" can be very helpful.
+4. Using sudo for Superuser Privileges
+Basics:
+
+sudo [command] — Runs a command with superuser privileges.
+Example: sudo apt update — Updates package lists.
+Tips:
+
+Use sudo carefully to avoid making unintended system changes.
+If you need clarification, ask ChatGPT or search "How to use sudo in Linux."
+Practice Exercises
+Navigation and File Management:
+
+Create a directory named project and navigate into it.
+Inside project, create a file called notes.txt.
+Go back to your home directory.
+File Editing and Viewing:
+
+Add the text "Hello, Linux!" to notes.txt using echo.
+View the contents using cat and less.
+Permission Changes:
+
+Make notes.txt executable.
+Verify the permission changes with ls -l.
+Using sudo:
+
+Attempt to create a file in /root using sudo.
+Update your system's package list with sudo apt update.
+Additional Resources
+Google Searches:
+
+Use specific queries like "How to change directory in Linux" for quick answers.
+ChatGPT:
+
+Ask detailed questions for explanations or troubleshooting.
+Manual Pages:
+
+Type man [command] in the terminal for the manual.
+Online Tutorials:
+
+-
+Preparation Tips:
+
+Hands-On Practice: The more you use these commands, the more comfortable you'll become.
+Understand the 'Why': Don't just memorize commands—understand what they do.
+Ask for Help: If you're stuck, use the resources above or reach out to me during class time and work periods
