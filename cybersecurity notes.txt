@@ -497,3 +497,38 @@ Preparation Tips:
 Hands-On Practice: The more you use these commands, the more comfortable you'll become.
 Understand the 'Why': Don't just memorize commands—understand what they do.
 Ask for Help: If you're stuck, use the resources above or reach out to me during class time and work periods
+-------------------------
+===========================================================
+-------------------------
+[git init] - initialize git tracking in project folder
+
+[git status] - see what files are untracked
+
+[git add (name)] - add the main file to staging area
+
+[git commit -m "Descriptive message"] - commit the staged file with a Descriptive message
+
+[git add .] - add all remaining files to the staging area
+
+[git log] - see the history of your commits
+
+[git checkout -b (branch name)] - create and switch to a mew branch
+
+[git merge (branch)] - merge the branch to the main branch
+
+[git log --oneline --graph --all] - visualize your commit history in a graph format
+
+[git restore (file)]
+[git checkout --(file)] restore the file to its last commited state
+
+[git config --global.(al) (alias)] - create aliases for git commands
+
+[git tag -a v1.0 -m "version 1.0 release"] tag the current stage of your game
+
+[git tag] - view all tags 
+
+[git reset --soft HEAD~1] undo the last commit but keep the changes staged (so you can edit them)
+
+[git reset --hard HEAD~1] undo the last commit and discard changes (warning: hard deletes changed permanently for your local repository)
+
+[git push -u origin main] - push your local repository to remote
