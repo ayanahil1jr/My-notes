@@ -634,3 +634,23 @@ predefined configurations (often used in cloud environments).
 Managing containers: Interacting with tools like Docker, managing containers,
 images, or volumes.
 
+	How to write a simple bash script
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#!/bin/bash
+
+number = 2
+
+if [ $number == 2]; then
+	echo "the number is 2"
+else
+	echo "the number is not 2"
+fi
+
+
+this script has a declared variable. the variable is "number" and its declared
+with "2".
+
+the control structer is an if-statement. the if statement states if the variable
+"number" equals 2, then say "the number is 2". then there is the else command.
+if the condition in the parameters is not true, then the else statement will
+execute. the example here is "the number is not 2" will show up.
