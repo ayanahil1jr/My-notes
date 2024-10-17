@@ -719,3 +719,26 @@ df: reports disk space usage of file systems, showing how much disk space is use
 uptime: shows how long the system has been running, along with current time, number of users, and the system's load averages
 
 	usage: write uptime in bash
+
+	Log monitoring
+	~~~~~~~~~~~~~~
+journalctl: a command-line tool for viewing system logs managed by systemd. it helps centralize logs from services, applications, and
+the system, allowing for easy searching and filtering.
+
+	uses:
+		view all logs: journalctl
+		view logs for current boot: journalctl -b
+		view logs for a specific service: journalctl -u <service>
+		follow logs in real time: journalctl -f
+		provides detailed, filtered view of the system logs: journalctl -xe
+
+/var/log: a directory that contaims plain-text log files for various system services, applications, and the linux kernel
+
+	uses:
+		displays the content of a log file: cat /var/log/syslog
+		opens the log in a paginated viewer, allowing you to scroll through it: less /var/log/syslog
+		shows the last few lines of a log file: less /var/log/syslog
+		follows log in real-time: tail -f /var/log/syslog
+
+	Self-Made Instructions:
+	~~~~~~~~~~~~~~~~~~~~~~~
