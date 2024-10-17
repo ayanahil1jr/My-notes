@@ -679,3 +679,22 @@ fi
 ------------------------
 ====================================
 ------------------------
+
+	What is System Monitoring?
+	~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System monitoring refers to the process of continuosly observing and tracking
+the performance and health of a computer system or network. the objective 
+is to ensure that the system is functioning properly, performing efficiently, and it is free from issues that could lead to downtime
+or degraded performance.
+
+	Why is it important for maintaining a healthy linux system?
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- detects problems early
+- optimizes performance by tracking usage and fine-tuning configurations
+- ensure security by monitoring for suspicious activity
+- plan for future needs with capacity tracking
+- maintain service reliability by ensuring critical services run smoothly
+- speed up troubleshooting with detailed performance and log data
+
