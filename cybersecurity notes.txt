@@ -698,3 +698,24 @@ or degraded performance.
 - maintain service reliability by ensuring critical services run smoothly
 - speed up troubleshooting with detailed performance and log data
 
+	Commands
+	~~~~~~~~
+
+top: displays real-time system processes and resource usage
+
+	usage: write top in bash
+
+htop: a more user-friendly and colour interface with additionl features like easier process management and navigation
+
+	usage: sudo apt install htop
+		
+		write htop in bash
+
+df: reports disk space usage of file systems, showing how much disk space is used and available
+
+	usage: write df in bash
+		do "df -h" to see sizes in KB, MB, GB.
+
+uptime: shows how long the system has been running, along with current time, number of users, and the system's load averages
+
+	usage: write uptime in bash
