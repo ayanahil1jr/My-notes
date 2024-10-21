@@ -742,3 +742,26 @@ the system, allowing for easy searching and filtering.
 
 	Self-Made Instructions:
 	~~~~~~~~~~~~~~~~~~~~~~~
+
+use htop to show real-time cpu and memory usage, running processes
+press q to quit
+
+use df-h to see how much space is left.
+press q to quit
+
+use free-h to check avaliable memory
+press q to quit
+
+use journalctl -xe to check recent log entries
+press q to quit
+
+use cat /var/log to view specific log-ins
+
+commands for viewing /var/logs:
+	/var/log/auth.log (for login issues)
+	/var/log/syslog (for general system errors)
+	tail -f /var/log/syslog (follow logs in real time)
+
+-------------------
+===============================
+-------------------
