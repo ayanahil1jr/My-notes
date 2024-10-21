@@ -765,3 +765,64 @@ commands for viewing /var/logs:
 -------------------
 ===============================
 -------------------
+
+	System Security
+	~~~~~~~~~~~~~~~
+
+What are basic system security principles on linux?
+	
+	only give users and services the minimum access required to perform their tasks. avoid running processes as the root user unless
+	absolutely necessary
+
+	use strong passwords and if possible, 2FA for user accounts.
+
+	implement ssh key-based authentication instead of passwords for remote access
+
+	keep your system up-to-date to patch know vulnerabilities in software and services
+
+	use a firewall like ufw or iptables to control inbound and outbound traffic
+
+File Permissions:
+
+	linux permissions control who can read, write, or execute files and directories.
+	chmod: change permissions for owner and other users
+	chown hange file owner or group
+	list -l list permissions
+
+	to give a file permission to execute, use the command chmod +x (filename)
+
+User management:
+
+	to add users, you can use the command [sudo adduser (username)]
+
+	to modify users properties such as their group, home directory, or shell, you can use the command [sudo usermod {options} (username)
+
+	to delete a user, you can use the command [sudo deluser (username)]
+
+Firewall Basics:
+
+	UFW (Uncomplicated Firewall) is a user-friendly command-line tool for managing firewall rules in linux and for configuring iptables,
+	which is a much more complex firewall management tool.
+
+		how to enable: sudo ufw enable
+		how to disable: sudo ufw disable
+		to allow ssh: sudo ufw allow ssh
+		to allow a specific port: sudo ufw allow (port number)
+		to deny a port replace allow with deny ex. sudo ufw deny (port number)
+
+Self-Made instructions:
+
+	use chmod 700 filename to secure a file.
+	first number = permissions for owner. 7 = all permissions
+	second number = permissions for the group. 0 = none
+	last number = permissions for others. 0 = none
+	
+	setup a basic firewall by turning it on:
+	sudo ufw enable.
+	disable/enable ports to allow access from some ports but not others
+
+	sudo ufw allow ssh (enable remote access from other desktops)
+	sudo ufw deny 80 (deny permissions for access from http traffic on port 80)
+
+------------------
+=======================
