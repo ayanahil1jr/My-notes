@@ -826,3 +826,35 @@ Self-Made instructions:
 
 ------------------
 =======================
+------------------
+
+What is an OS?
+
+An OS is responsible for running the system and provides an interface between the user and hardware.
+Process Management: An OS runs and manages processes, allocates cpu usage, and ensures smooth multitasking.
+Memory management: allocates and deallocates memory usage to process efficiently.
+File system management: handles data storage, retrieval, and organization of files.
+device management: controls communcation between devices (keyboard, mouse, headphones) and software.
+User Interface: Provides a way for the user to interact with the system. (CLI like bash, GUI like windows)
+
+Differences between windows and linux:
+Windows | Linux
+Closed Source | Open Source
+Paid | Mostly free
+Graphical (GUI) | GUI & command line (CLI-focused)
+Limited customization | highly customizable
+More vulnerable | More secure (User permission model)
+Supports most commercial software | requires alternative or emulators
+Higher resource usage | lightweight, higher performance on older hardware
+forced updates, can be disruptive | User-controlled updates
+NTFS, FAT32 | ext4, XFS, Btrfs, etc.
+General users, gamers, businesses | developers, programmers, servers, cybersecurity
+
+------------------
+=======================
+------------------
+
+A VM is a softwware-based simulation of a computer system that runs an OS withen another OS.
+it allows you to run multiple OS environments on a single physical machine
+
+
