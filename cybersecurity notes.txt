@@ -992,3 +992,8 @@ HTTP/HTTPS – Protocols for web communication.
 ISP (Internet Service Provider) – Provides internet access.
 
 Packets – Small units of data transferred across networks.
+
+------------------
+=======================
+------------------
+
