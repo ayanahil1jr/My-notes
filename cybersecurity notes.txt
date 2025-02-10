@@ -854,7 +854,141 @@ General users, gamers, businesses | developers, programmers, servers, cybersecur
 =======================
 ------------------
 
-A VM is a softwware-based simulation of a computer system that runs an OS withen another OS.
-it allows you to run multiple OS environments on a single physical machine
+What is a virtual machine?
+
+A Virtual Machine (VM) is a software-based simulation of a physical computer that allows multiple operating systems to run on a single physical machine. It uses virtualized hardware, including CPU, memory, and storage, to create isolated environments that function independently of the host system.
+
+------------------
+=======================
+------------------
+
+How to use VMWare and VirtualBox to install a Linux VM?
+
+Download and install VMWare Workstation Player or Oracle VirtualBox.
+Download a Linux distribution ISO file.
+Open VMWare or VirtualBox and create a new VM.
+Allocate resources (RAM, CPU, storage) for the VM.
+Attach the Linux ISO as a bootable disk.
+Start the VM and follow the installation steps of the chosen Linux distribution.
+Complete installation and remove the ISO to boot into the installed OS.
+
+------------------
+=======================
+------------------
+
+How to search for and find Linux distributions for installation?
+
+Visit DistroWatch (https://distrowatch.com) to compare distributions.
+Search for beginner-friendly distros like Ubuntu, Fedora, or Linux Mint.
+Consider purpose-specific distros such as Kali Linux (for security) or Arch Linux (for advanced users).
+Check the official websites of distributions for latest versions and download links.
+
+------------------
+=======================
+------------------
+
+Powershell commands:
+
+Get-Location – Show current directory.
+Get-ChildItem – List files and folders.
+Set-Location <directory> – Change directory.
+
+------------------
+=======================
+------------------
+
+Git Commands:
 
 
+Creating repositories:
+
+git init – Initialize a local repository.
+git clone <repo_url> – Clone an existing repository.
+git remote add origin <repo_url> – Link local repo to GitHub.
+Pushing, pulling, merging:
+
+git add . – Stage all changes.
+git commit -m "message" – Commit changes.
+git push origin main – Push changes to GitHub.
+git pull origin main – Pull latest updates from GitHub.
+git merge branch_name – Merge branches.
+Checking for conflicts:
+
+git status – Check current changes.
+git diff – Show differences in files.
+Resolve conflicts manually and commit changes.
+
+------------------
+=======================
+------------------
+
+Understanding the layers of an OS.
+
+
+
+Hardware Layer – Physical components like CPU, RAM, and storage.
+
+Kernel – Core of the OS that manages system resources.
+
+Shell – User interface for interacting with the system (CLI or GUI).
+
+Applications Layer – Software that runs on the OS.
+
+User Layer – End users interacting with the system.
+
+------------------
+=======================
+------------------
+
+Identifying and understanding parts of a PC.
+
+
+CPU (Central Processing Unit) – Executes instructions.
+
+RAM (Random Access Memory) – Temporary memory for active processes.
+
+HDD/SSD (Hard Disk Drive/Solid State Drive) – Storage devices.
+
+Motherboard – Connects all components.
+
+Power Supply Unit (PSU) – Converts electricity for components.
+
+GPU (Graphics Processing Unit) – Handles graphical processing.
+
+------------------
+=======================
+------------------
+
+Understanding what a network is and how it functions.
+
+
+
+A network is a group of interconnected devices that communicate using protocols.
+
+LAN (Local Area Network) – Connects devices in a small area.
+
+WAN (Wide Area Network) – Connects devices over large distances.
+
+IP Address – Unique identifier for a device in a network.
+
+Router – Directs traffic between networks.
+
+Switch – Connects multiple devices in a network.
+
+------------------
+=======================
+------------------
+
+Understanding what the Internet is and how it functions.
+
+
+
+The Internet is a global network of interconnected computers that communicate using the TCP/IP protocol.
+
+DNS (Domain Name System) – Converts domain names to IP addresses.
+
+HTTP/HTTPS – Protocols for web communication.
+
+ISP (Internet Service Provider) – Provides internet access.
+
+Packets – Small units of data transferred across networks.
