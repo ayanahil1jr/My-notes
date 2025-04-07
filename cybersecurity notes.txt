@@ -997,3 +997,14 @@ Packets – Small units of data transferred across networks.
 =======================
 ------------------
 
+CRUD Operations:
+
+CRUD operations are the four basic functions you can perform on data in a database or a persistent storage system. CRUD stands for:
+
+Create – Add new data (e.g., adding a new user to a database)
+
+Read – Retrieve or view existing data (e.g., viewing a list of products)
+
+Update – Modify existing data (e.g., editing a blog post)
+
+Delete – Remove data (e.g., deleting a comment)
